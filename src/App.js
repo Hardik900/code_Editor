@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import "./index.css";
 import Editor from './Editor';
 import React, {useState, useEffect} from 'react';
 
@@ -7,6 +8,24 @@ function App() {
   const [html, setHtml] = useState('')
   const [css, setCss] = useState('')
   const [js, setJs] = useState('')
+  const [srcDoc, setSrcDoc] = useState('')
+
+  useEffect(()=>{
+    const timeout = setTimeout(()=>{
+      setSrcDoc( `
+        <html>
+          <body>${html}</body>
+          <body>${css}</body>
+          <body>${js}</body>
+        </html>
+      `)
+    },250)
+
+    return () => clearTimeout(timeout)
+  },[html, css, js])
+
+  
+
   return (
     <>
       <h1>Hello</h1>
@@ -33,6 +52,7 @@ function App() {
       </div>
       <div className='pane'>
         <iframe
+        srcDoc={srcDoc}
           title=''
           frameBorder="0"
           width = "100%"
