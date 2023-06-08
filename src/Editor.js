@@ -15,7 +15,7 @@ function Editor(props){
                 {displayName}
                 <button>O/C</button>
             </div>
-            
+               
         </div>
     )
 }

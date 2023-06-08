@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Hello Hardik saini</h1>
       <div className='pane top-pane'>
         <Editor 
           language = "xml"
