@@ -13,7 +13,7 @@ function Editor(props){
         <div className="editor-container">
             <div className="editor-title">
                 {displayName}
-                <button>O/C</button>
+                <button>Open/Close</button>
             </div>
                
         </div>
